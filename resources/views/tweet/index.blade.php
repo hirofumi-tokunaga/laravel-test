@@ -28,7 +28,9 @@
       @endauth
       @foreach($tweets as $tweet)
         <details>
-          <summary>{{ $tweet->content}} by {{$tweet->user->name}}</summary>
+          <summary>{{ $tweet->content}} by {{$tweet->user->name}}
+            <x-tweet.images :images="$tweet->images"/>
+          </summary>
           @if(\Illuminate\Support\Facades\Auth::id() === $tweet->user_id)
           <div>
             <a href="{{route('tweet.update.index',['tweetId' => $tweet->id])}}">編集</a>

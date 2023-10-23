@@ -18,6 +18,6 @@ class IndexController extends Controller
 
       $tweets = $tweetService->getTweets();
       // return view('tweet.index'),['name' => 'laravel']);
-      return view('tweet.index')->with('tweets',$tweets)->with('version','8');
+      return view('tweet.index')->with('tweets',$tweets);
     }
 }
